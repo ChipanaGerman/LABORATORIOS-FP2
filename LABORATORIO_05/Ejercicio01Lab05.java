@@ -10,6 +10,12 @@ public class Ejercicio01Lab05 {
     public static void main(String[] args) {
         VideoJuego2 juego=new VideoJuego2();
         juego.mostrarTablero();
-        juego.mostrarSoldadoMayorVida();       
+        juego.mostrarSoldadoMayorVida();
+        juego.mostrarPromedioNivelVida();
+        juego.mostrarVidaTotalEjercito();
+        juego.mostrarSoldados();
+        juego.mostrarRankingSoldados();
     }   
 }
+
+

@@ -34,3 +34,6 @@ public class Soldado{
         return "Soldado: "+nombre+", Vida: "+nivelVida+", Posicion: ("+fila+", "+columna+")";
     }   
 }
+
+
+
