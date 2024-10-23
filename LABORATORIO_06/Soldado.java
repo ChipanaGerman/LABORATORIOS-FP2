@@ -31,6 +31,6 @@ public class Soldado {
     }
     
     public String toString(){
-        return "Soldado: "+nombre+", Vida: "+nivelVida+", Posicion: ("+fila+", "+columna+")";
+        return "Soldado: "+nombre+", Vida: "+nivelVida+", Posicion: ("+(fila+1)+", "+(columna+1)+")";
     }   
 }

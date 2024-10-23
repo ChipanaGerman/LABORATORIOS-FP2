@@ -11,6 +11,11 @@ public class Laboratorio06_FP2 {
         VideoJuego3 juego=new VideoJuego3(10, 10);
         juego.mostrarTablero();
         juego.mostrarSoldadosMayorVida(1, juego.ejercito1);
+        juego.mostrarSoldadosMayorVida(2, juego.ejercito2);
+        juego.mostrarPromedioNivelVida(1, juego.ejercito1);
+        juego.mostrarPromedioNivelVida(2, juego.ejercito2);
+        juego.mostrarSoldadosOrdenCreacion(1, juego.ejercito1);
+        juego.mostrarSoldadosOrdenCreacion(2, juego.ejercito2);
     }
     
 }

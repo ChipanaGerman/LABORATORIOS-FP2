@@ -71,5 +71,21 @@ public class VideoJuego3 {
         }
         System.out.println("Soldado con mayor nivel de vida del ejercito "+numEjercito+" : "+mayorVida);
     }   
+    // Método para calcular el promedio de nivel de vida
+    public void mostrarPromedioNivelVida(int numEjercito, ArrayList<Soldado> ejercito){
+        int sumaVida=0;
+        for(Soldado soldado : ejercito){
+            sumaVida+=soldado.getNivelVida();
+        }
+        double promedio=(double)sumaVida/ejercito.size();
+        System.out.println("Promedio del nivel de vida del ejercito "+numEjercito+" : "+promedio);
+    }
+    // Método para mostrar todos los soldados en el orden en que fueron creados
+    public void mostrarSoldadosOrdenCreacion(int numEjercito, ArrayList<Soldado> ejercito){
+        System.out.println("Soldados del ejercito "+numEjercito+" en el orden de creacion:");
+        for(Soldado soldado : ejercito){
+            System.out.println(soldado);
+        }
+    }
     
 }
