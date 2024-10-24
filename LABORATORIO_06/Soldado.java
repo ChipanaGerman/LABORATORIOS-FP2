@@ -29,7 +29,7 @@ public class Soldado {
     public int getColumna(){
         return columna;
     }
-    
+    // Metodo toString
     public String toString(){
         return "Soldado: "+nombre+", Vida: "+nivelVida+", Posicion: ("+(fila+1)+", "+(columna+1)+")";
     }   
