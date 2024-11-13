@@ -5,30 +5,16 @@ package laboratorio7;
 
 import java.util.*;
 public class VideoJuego4 {
-    private ArrayList<ArrayList<Soldado>> tablero;  // Tablero bidimensional de soldados
+    private Soldado[][] tablero;  // Tablero bidimensional de soldados
     public ArrayList<Soldado> ejercito1;   // Lista de soldados del Ejército 1
     public ArrayList<Soldado> ejercito2;   // Lista de soldados del Ejército 2
-    private int filas;
-    private int columnas;  
     // Constructor: Inicializa el tablero y los ejércitos
-    public VideoJuego4(int filas, int columnas){
-        this.tablero=new ArrayList<ArrayList<Soldado>>();   // Inicializa el tablero bidimensional
+    public VideoJuego4(){
+        this.tablero=new Soldado[10][10];   // Inicializa el tablero bidimensional
         this.ejercito1=new ArrayList<Soldado>();    // Inicializa la lista del Ejército 1
         this.ejercito2=new ArrayList<Soldado>();    // Inicializa la lista del Ejército 2
-        this.filas=filas;
-        this.columnas=columnas;
-        inicializarTablero();   // Llena el tablero con espacios vacíos
         inicializarEjercito(1, ejercito1);  // Inicializa los soldados para el Ejército 1
         inicializarEjercito(2, ejercito2);  // Inicializa los soldados para el Ejército 2
-    }
-    // Método para inicializar el tablero con filas y columnas vacías
-    private void inicializarTablero(){
-        for(int i=0;i<filas;i++){
-            tablero.add(new ArrayList<>()); // Agrega una nueva fila
-            for(int j=0;j<columnas;j++){
-                tablero.get(i).add(null);   // Llena cada celda con null para indicar que está vacía
-            }
-        }
     }
     // Método para inicializar los soldados en el tablero y añadirlos a un ejército
     private void inicializarEjercito(int numEjercito, ArrayList<Soldado> ejercito){
@@ -41,18 +27,18 @@ public class VideoJuego4 {
             do{
                 fila=(int)(Math.random()*10);   // Fila aleatoria
                 columna=(int)(Math.random()*10);    // Columna aleatoria
-            }while(tablero.get(fila).get(columna)!=null);   // Repite mientras la posición no esté vacía  
+            }while(tablero[fila][columna]!=null);   // Repite mientras la posición no esté vacía  
 
             Soldado soldado=new Soldado(nombre, nivelVida, fila, columna);  // Crea el soldado con los atributos generados
-            tablero.get(fila).set(columna, soldado);    // Coloca el soldado en el tablero  
+            tablero[fila][columna]=soldado;    // Coloca el soldado en el tablero  
             ejercito.add(soldado);  // Añade el soldado al ejército correspondiente  
         }
     }
     // Método para mostrar el tablero con los soldados posicionados
     public void mostrarTablero(){
-        for(int i=0;i<filas;i++){
-            for(int j=0;j<columnas;j++){
-                Soldado soldado=tablero.get(i).get(j);  // Obtiene el soldado en la posición (i,j)
+        for(int i=0;i<tablero.length;i++){
+            for(int j=0;j<tablero[i].length;j++){
+                Soldado soldado=tablero[i][j];  // Obtiene el soldado en la posición (i,j)
                 if(soldado==null){
                     System.out.print("| _________ ");   // Imprime una casilla vacía 
                 }else{

@@ -11,7 +11,7 @@ public class Laboratorio7 {
         Scanner scan=new Scanner(System.in);
         String respuesta="s";
         while("s".equals(respuesta)){
-            VideoJuego4 juego=new VideoJuego4(10, 10);  // Crea una instancia del juego con un tablero de 10x10
+            VideoJuego4 juego=new VideoJuego4();  // Crea una instancia del juego con un tablero de 10x10
             juego.mostrarTablero(); // Muestra el tablero actual con los soldados colocados
             juego.mostrarSoldadosMayorVida(1, juego.ejercito1); // Muestra el soldado con mayor nivel de vida del Ejército 1
             juego.mostrarSoldadosMayorVida(2, juego.ejercito2); // Muestra el soldado con mayor nivel de vida del Ejército 2
