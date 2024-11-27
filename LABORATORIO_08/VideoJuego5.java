@@ -32,7 +32,7 @@ public class VideoJuego5 {
 
             Soldado soldado=new Soldado(nombre, nivelVida, fila, columna);  // Crea el soldado con los atributos generados
             tablero[fila][columna]=soldado;    // Coloca el soldado en el tablero  
-            ejercito.add(soldado);  // Añade el soldado al ejército correspondiente  
+            ejercito.put(i, soldado);  // Añade el soldado al ejército correspondiente con un índice como clave  
         }
     }
     // Método para mostrar el tablero con los soldados posicionados
