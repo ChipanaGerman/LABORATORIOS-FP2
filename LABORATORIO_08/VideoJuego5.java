@@ -126,7 +126,7 @@ public class VideoJuego5 {
         }
     }  
     // Método que determina y muestra el ejército ganador basado en el número de soldados
-    public void mostrarEjercitoGanador(ArrayList<Soldado> ejercito1, ArrayList<Soldado> ejercito2){
+    public void mostrarEjercitoGanador(HashMap<Integer, Soldado> ejercito1, HashMap<Integer, Soldado> ejercito2){
         if(ejercito1.size()>=ejercito2.size()){
             if(ejercito1.size()==ejercito2.size())
                 System.out.println("Hubo un EMPATE de ejercitos, ambos con "+ejercito1.size()+" soldados...");
