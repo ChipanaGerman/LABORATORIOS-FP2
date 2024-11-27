@@ -7,18 +7,18 @@ import java.util.*;
 
 public class VideoJuego5 {
     private Soldado[][] tablero;  // Tablero bidimensional de soldados
-    public ArrayList<Soldado> ejercito1;   // Lista de soldados del Ejército 1
-    public ArrayList<Soldado> ejercito2;   // Lista de soldados del Ejército 2
+    public HashMap<Integer, Soldado> ejercito1;   // Mapa de soldados del Ejército 1
+    public HashMap<Integer, Soldado> ejercito2;   // Mapa de soldados del Ejército 2
     // Constructor: Inicializa el tablero y los ejércitos
     public VideoJuego5(){
         this.tablero=new Soldado[10][10];   // Inicializa el tablero bidimensional
-        this.ejercito1=new ArrayList<Soldado>();    // Inicializa la lista del Ejército 1
-        this.ejercito2=new ArrayList<Soldado>();    // Inicializa la lista del Ejército 2
+        this.ejercito1 = new HashMap<>();    // Inicializa el mapa del Ejército 1
+        this.ejercito2 = new HashMap<>();    // Inicializa el mapa del Ejército 2
         inicializarEjercito(1, ejercito1);  // Inicializa los soldados para el Ejército 1
         inicializarEjercito(2, ejercito2);  // Inicializa los soldados para el Ejército 2
     }
     // Método para inicializar los soldados en el tablero y añadirlos a un ejército
-    private void inicializarEjercito(int numEjercito, ArrayList<Soldado> ejercito){
+    private void inicializarEjercito(int numEjercito, HashMap<Integer, Soldado> ejercito){
         int cantidadSoldados=(int)(Math.random()*10+1); // Genera una cantidad aleatoria de soldados entre 1 y 10
         for(int i=0;i<cantidadSoldados;i++){
             String nombre="Soldado"+i+"X"+numEjercito;  // Genera un nombre único para cada soldado
