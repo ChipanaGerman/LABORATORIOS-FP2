@@ -51,10 +51,10 @@ public class VideoJuego5 {
         System.out.println();
     }
     // Método para mostrar el soldado con mayor nivel de vida en un ejército
-    public void mostrarSoldadosMayorVida(int numEjercito, ArrayList<Soldado> ejercito){
-        Soldado mayorVida=ejercito.get(0);  // Inicializa con el primer soldado
-        for(Soldado soldado : ejercito){
-            if(soldado.getNivelVida()>mayorVida.getNivelVida()){
+    public void mostrarSoldadosMayorVida(int numEjercito, HashMap<Integer, Soldado> ejercito){
+        Soldado mayorVida=null;  
+        for(Soldado soldado : ejercito.values()){
+            if(mayorVida==null || soldado.getNivelVida()>mayorVida.getNivelVida()){
                 mayorVida=soldado;  // Actualiza si encuentra un soldado con mayor nivel de vida
             }
         }
@@ -62,9 +62,9 @@ public class VideoJuego5 {
         System.out.println();
     }   
     // Método para calcular y mostrar el promedio del nivel de vida de un ejército
-    public void mostrarPromedioNivelVida(int numEjercito, ArrayList<Soldado> ejercito){
+    public void mostrarPromedioNivelVida(int numEjercito, HashMap<Integer, Soldado> ejercito){
         int sumaVida=0;
-        for(Soldado soldado : ejercito){
+        for(Soldado soldado : ejercito.values()){
             sumaVida+=soldado.getNivelVida();   // Suma el nivel de vida de cada soldado
         }
         double promedio=(double)sumaVida/ejercito.size();   // Calcula el promedio
