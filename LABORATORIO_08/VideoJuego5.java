@@ -72,24 +72,24 @@ public class VideoJuego5 {
         System.out.println();
     }
     // Método para mostrar los soldados en el orden en que fueron creados
-    public void mostrarSoldadosOrdenCreacion(int numEjercito, ArrayList<Soldado> ejercito){
+    public void mostrarSoldadosOrdenCreacion(int numEjercito, HashMap<Integer, Soldado> ejercito){
         System.out.println("Soldados del ejercito "+numEjercito+" en el orden de creacion:");
-        for(Soldado soldado : ejercito){
+        for(Soldado soldado : ejercito.values()){
             System.out.println(soldado);    // Imprime cada soldado en el orden de creación
         }
         System.out.println();
     }
     // Método para mostrar el ranking de soldados basado en su nivel de vida, usando burbuja y selección
-    public void mostrarRankingSoldados(int numEjercito, ArrayList<Soldado> ejercito){
+    public void mostrarRankingSoldados(int numEjercito, HashMap<Integer, Soldado> ejercito){
         // Ordenamiento por burbuja
-        ArrayList<Soldado> ejercitoBurbuja=(ArrayList<Soldado>) ejercito.clone();   // Clona el ejército original
+        ArrayList<Soldado> ejercitoBurbuja=new ArrayList<>(ejercito.values());   // Convierte el HashMap a lista
         burbujaOrdenar(ejercitoBurbuja);    // Ordena usando el algoritmo de burbuja
         System.out.println("Ranking de soldados ejercito "+numEjercito+" (Burbuja): ");
         for(Soldado soldado : ejercitoBurbuja){
             System.out.println(soldado);    // Imprime los soldados ordenados    
         }
         // Ordenamiento por selección
-        ArrayList<Soldado> ejercitoSeleccion=(ArrayList<Soldado>) ejercito.clone(); // Clona el ejército original
+        ArrayList<Soldado> ejercitoSeleccion=new ArrayList<>(ejercito.values()); // Convierte el HashMap a lista
         seleccionOrdenar(ejercitoSeleccion);    // Ordena usando el algoritmo de selección
         System.out.println("Ranking de soldados ejercito "+numEjercito+" (Seleccion): ");
         for(Soldado soldado : ejercitoSeleccion){
